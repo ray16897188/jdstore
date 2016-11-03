@@ -19,20 +19,19 @@
 
             <div class="card__back">
               <span class="card__text">
-              	<%= link_to product.description, product_path(product) %>
+              	<p><%= link_to product.title, product_path(product) %></p> 
               </span>
             </div>
           </div>
-
+        
         <% end %>
-
-
 
         </div><!-- /card -->
 
-
       </div><!-- /section -->
-
+      
+      <p class="pull-right">查看更多</p>
+      <br>
       
 
       <div class="section">
