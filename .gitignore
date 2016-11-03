@@ -21,4 +21,4 @@
 .byebug_history
 config/database.yml
 config/application.yml
-config/public/uploads/
+config/public/uploads/*
