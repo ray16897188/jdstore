@@ -20,6 +20,16 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+.footer {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  padding-top: 15px;
+  background-color: #efefef;
+  text-align: center;
+}
+
 .jumbotron {
     background-color:#f4f4f4 !important; 
 }
