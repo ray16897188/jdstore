@@ -34,7 +34,7 @@
 <% only_image ||= false %>
 
 <% if only_image %>
-	<%= image_tag(image_url) %>
+	<%= image_tag(image_url, style: "width: 100%") %>
 <% else %>
 	<% if admin %>
 		<% path = admin_product_path(product) %>
@@ -43,9 +43,9 @@
 	<% end %>
 
 	<% if product.image.present? %>
-		<%= link_to image_tag(image_url), path %>
+		<%= link_to image_tag(image_url, style: "width: 100%"), path %>
 	<% else %>
-		<%= link_to image_tag(image_url), path %>	
+		<%= link_to image_tag(image_url, style: "width: 100%"), path %>	
 	<% end %>
 <% end %>
 

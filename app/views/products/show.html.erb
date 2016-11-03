@@ -3,11 +3,14 @@
 
 <div class="container">
 
-	<div class="col-md-3">
+
+	<div class="col-md-4">
+
+		<br><br>
 		<%= render partial: "common/product_image", locals: {product: @product, size: "medium", only_image: true} %>	
 	</div>
 
-	<div class="col-md-4 col-md-offset-2">
+	<div class="col-md-4 col-md-offset-1">
 		<h2><%= simple_format(@product.title) %></h2>	
 		<br>
 		<h3>库存</h3><%= @product.quantity %>
@@ -24,20 +27,13 @@
 			<div class="col-md-12">
 
 				<%= render partial: "common/product_image", locals: {product: other_product, size: "thumb"} %>
-
-				<% if false %>
-					<% if other_product.image.present? %>
-						<%= link_to image_tag(other_product.image.url(:thumb)), product_path(other_product) %>
-					<% else %>
-						<%= link_to image_tag($DEFAULT_THUMB_IMAGE), product_path(other_product) %>
-					<% end %>
-				<% end %>
-
 				
 				<br>	
-				<%= link_to "#{other_product.title}", product_path(other_product) %>
+				<%= link_to other_product.title, product_path(other_product), class: "pull-right" %>
 				<br>
-				<%= other_product.price %>
+				<span class="pull-right"><%= other_product.price %></span>
+				
+				<br><br>
 			</div>
 			<% end %>
 		</div>
