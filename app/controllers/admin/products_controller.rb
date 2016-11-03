@@ -13,12 +13,12 @@ class Admin::ProductsController < ApplicationController
 		end
 
 		unless @products.any?
-			render :no_result
+			render :no_result_admin
 		end
 
 	end
 
-	def no_result
+	def no_result_admin
 	end
 
 	def new
