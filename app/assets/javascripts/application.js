@@ -20,26 +20,89 @@
 
 $(document).ready(function() {
  
-  $("#owl-demo").owlCarousel({
+  var time = 7; // time in seconds
  
-      autoPlay: 3000, //Set AutoPlay to 3 seconds
+  var $progressBar,
+      $bar, 
+      $elem, 
+      isPause, 
+      tick,
+      percentTime;
  
-      items : 1,
-      itemsDesktop : [1199,3],
-      itemsDesktopSmall : [979,3]
+    //Init the carousel
+    $("#owl-demo").owlCarousel({
+      slideSpeed : 500,
+      paginationSpeed : 500,
+      singleItem : true,
+      afterInit : progressBar,
+      afterMove : moved,
+      startDragging : pauseOnDragging
+    });
  
-  });
+    //Init progressBar where elem is $("#owl-demo")
+    function progressBar(elem){
+      $elem = elem;
+      //build progress bar elements
+      buildProgressBar();
+      //start counting
+      start();
+    }
+ 
+    //create div#progressBar and div#bar then prepend to $("#owl-demo")
+    function buildProgressBar(){
+      $progressBar = $("<div>",{
+        id:"progressBar"
+      });
+      $bar = $("<div>",{
+        id:"bar"
+      });
+      $progressBar.append($bar).prependTo($elem);
+    }
+ 
+    function start() {
+      //reset timer
+      percentTime = 0;
+      isPause = false;
+      //run interval every 0.01 second
+      tick = setInterval(interval, 10);
+    };
+ 
+    function interval() {
+      if(isPause === false){
+        percentTime += 1 / time;
+        $bar.css({
+           width: percentTime+"%"
+         });
+        //if percentTime is equal or greater than 100
+        if(percentTime >= 100){
+          //slide to next item 
+          $elem.trigger('owl.next')
+        }
+      }
+    }
+ 
+    //pause while dragging 
+    function pauseOnDragging(){
+      isPause = true;
+    }
+ 
+    //moved callback
+    function moved(){
+      //clear interval
+      clearTimeout(tick);
+      //start again
+      start();
+    }
+ 
+    //uncomment this to make pause on mouseover 
+    // $elem.on('mouseover',function(){
+    //   isPause = true;
+    // })
+    // $elem.on('mouseout',function(){
+    //   isPause = false;
+    // })
  
 });
-
-(function(){
-  var fusoionad_script = document.createElement('script');
-  fusoionad_script.type = 'text/javascript';
-  fusoionad_script.async = true;
-  fusoionad_script.id = "_fusionads_js";
-  fusoionad_script.src = '//cdn.fusionads.net/fusion.js?zoneid=1332&serve=C6SDP2Y&placement=callmenickcom';
-  document.body.appendChild(fusoionad_script);
-})();
 
 /* Modernizr 2.8.1 (Custom Build) | MIT & BSD
  * Build: http://modernizr.com/download/#-fontface-backgroundsize-borderimage-borderradius-boxshadow-flexbox-flexboxlegacy-hsla-multiplebgs-opacity-rgba-textshadow-cssanimations-csscolumns-generatedcontent-cssgradients-cssreflections-csstransforms-csstransforms3d-csstransitions-applicationcache-canvas-canvastext-draganddrop-hashchange-history-audio-video-indexeddb-input-inputtypes-localstorage-postmessage-sessionstorage-websockets-websqldatabase-webworkers-geolocation-inlinesvg-smil-svg-svgclippaths-touch-webgl-shiv-cssclasses-teststyles-testprop-testallprops-hasevent-prefixes-domprefixes-load

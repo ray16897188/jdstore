@@ -5,14 +5,26 @@
 
 
 
-#owl-demo .item{
-  margin: 3px;
-}
 #owl-demo .item img{
   display: block;
   width: 100%;
   height: auto;
 }
+#bar{
+  width: 0%;
+  max-width: 100%;
+  height: 4px;
+  background: #7fc242;
+}
+#progressBar{
+  width: 100%;
+  background: #EDEDED;
+}
+
+
+
+
+
 
 .section {
   margin-bottom: 40px;
