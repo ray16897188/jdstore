@@ -1,5 +1,5 @@
 class Admin::ProductsController < ApplicationController
-	
+
 	before_action :authenticate_user!
 	before_action :require_is_admin
 
@@ -56,13 +56,13 @@ class Admin::ProductsController < ApplicationController
 
 	def edit
 		@product = Product.find(params[:id])
-		
+
 	end
 
 	private
 
 	def product_params
-		params.require(:product).permit(:title, :description, :price, :quantity, :image)
+		params.require(:product).permit(:title, :description, :price, :quantity, :image,{photos: []})
 	end
 
 

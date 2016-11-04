@@ -8,15 +8,15 @@
 		<!-- major photo -->
 		<div class="col-md-4">
 			<br>
-			<%= render partial: "common/product_image", locals: {product: @product, size: "medium", only_image: true} %>	
+			<%= render partial: "common/product_image", locals: {product: @product, size: "medium", only_image: true} %>
 		</div>
 
 		<!-- title, description and add to cart -->
 		<div class="col-md-5">
-			<h3><%= simple_format(@product.title) %></h3>	
+			<h3><%= simple_format(@product.title) %></h3>
 			<br>
 			<h4>本月剩余预约次数</h4><%= @product.quantity %>
-			<br><p><%= simple_format(@product.description) %></p>			
+			<br><p><%= simple_format(@product.description) %></p>
 			<br>
 			<h4 class="text-left">价格: <span style="color: green"><%= @product.price %></span></h4>
 			<%= render "common/add_to_cart_button" %>
@@ -29,7 +29,7 @@
 			<% @other_products.each do |other_product| %>
 			<div class="col-md-12">
 				<%= render partial: "common/product_image", locals: {product: other_product, size: "thumb"} %>
-				<br>	
+				<br>
 				<%= link_to other_product.title, product_path(other_product), class: "pull-right" %>
 				<br><br>
 			</div>
@@ -41,3 +41,74 @@
 </div>
 
 
+
+
+
+
+
+
+<!--- reference for phootos>
+<div class="row">
+	<div class="col-md-6">
+		<% if @product.photos.present? %>
+	        <% @product.photos.each_with_index do |p, index| %>
+	          <% if index == 0 %>
+	            <%= image_tag p.medium.url %>
+	            <div style="letter-spacing: -4px">
+	          <% else %>
+	            <%= image_tag p.thumb.url %>
+	          <% end %>
+	        <% end %>
+	        </div>
+	      <% else %>
+	          <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+
+	      <% end %>
+	</div>
+
+	<div class="col-md-6">
+		<h2><%= simple_format(@product.title) %></h2>
+		<br>
+		<h3>库存</h3><%= @product.quantity %>
+		<h3>描述</h3><%= simple_format(@product.description) %>
+		<br><br>
+		<%= render "common/add_to_cart_button" %>
+	</div>
+
+
+</div>
+
+ <br><br>
+<hr>
+
+<div class="row">
+
+
+
+<div class="container">
+
+
+	<h4>其他类似产品</h4>
+	<br>
+	<div class="row">
+		<% @other_products.each do |other_product| %>
+		<div class="col-md-6">
+			<div class="thumbnail">
+			<% if @product.photos.present? %>
+						 <%= image_tag(@product.photos[0].thumb.url, class:"thumbnail") %>
+
+					<% else %>
+							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+
+					<% end %>
+ 				<div class="caption">
+					<p class='text-center'><%= link_to other_product.title, product_path(other_product) %><p>
+					<p class='text-center'><%= other_product.price %></p>
+			</div>
+		</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+</div>

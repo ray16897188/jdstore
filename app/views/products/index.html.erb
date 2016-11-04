@@ -1,88 +1,43 @@
+<div class="section">
 
-
-
-<div class="container">
-
-  <br>
-
-  <div id="owl-demo" class="owl-carousel owl-theme">
-    <div class="item"><img src="assets/banner1.jpg" alt="Owl Image"></div>
-    <div class="item"><img src="assets/banner2.jpg" alt="Owl Image"></div> 
-    <div class="item"><img src="assets/banner3.png" alt="Owl Image"></div>     
-  </div>
-
-  <div class="container">
-
-      <div class="section">
-        <h2 class="section__title">特色服务</h2>
 
         <div class="section__content clearfix">
 
         <% @products.each do |product|%>
 
           <div class="card effect__hover">
-            
+
             <div class="card__front">
             	<%= render partial: "common/product_image", locals: {product: product, size: "thumb"} %>
             </div>
 
             <div class="card__back">
-              <span class="card__text">
-              	<p><%= link_to product.title, product_path(product) %></p> 
-              </span>
+
+                <h3 class="card_title"><%= product.title %></h3>
+
+
+
+              <p class="card__text">
+
+               <%= link_to product.description, product_path(product) %>
+             </p>
             </div>
           </div>
-        
+
         <% end %>
-
         </div><!-- /card -->
 
-      </div><!-- /section -->
-      
-      <p class="pull-right">查看更多</p>
-      <br>
-      
 
-      <div class="section">
-        <h2 class="section__title">精彩推荐</h2>
+
+
+    <h2 class="section__title">特别推荐列</h2>
         <div class="section__content clearfix">
-          <div class="card effect__random" data-id="1">
-            <div class="card__front">
-              <span class="card__text">front</span>
-            </div>
-            <div class="card__back">
-              <span class="card__text">back</span>
-            </div>
-          </div><!-- /card -->
-          <div class="card effect__random" data-id="2">
-            <div class="card__front">
-              <span class="card__text">front</span>
-            </div>
-            <div class="card__back">
-              <span class="card__text">back</span>
-            </div>
-          </div><!-- /card -->
-          <div class="card effect__random" data-id="3">
-            <div class="card__front">
-              <span class="card__text">front</span>
-            </div>
-            <div class="card__back">
-              <span class="card__text">back</span>
-            </div>
-          </div><!-- /card -->
-          <div class="card effect__random" data-id="4">
-            <div class="card__front">
-              <span class="card__text">front</span>
-            </div>
-            <div class="card__back">
-              <span class="card__text">back</span>
-            </div>
-          </div>
+          <div class="row">
+          	<div class="col-md-6">
+          		   <%=  image_tag("http://placehold.it/625x312.5")%>
+          	    </div>
+          	    	<div class="col-md-6">
+                     <%=  image_tag("http://placehold.it/625x312.5")%>
+                   </div>
+
         </div><!-- /card -->
-      </div><!-- /section -->
-
-    </div>
-
-</div>
-
-

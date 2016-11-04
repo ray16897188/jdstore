@@ -17,7 +17,12 @@ class Product < ApplicationRecord
 
 	has_many :cart_items
 
+	mount_uploaders :photos, PhotosUploader
 	mount_uploader :image, ImageUploader
+
+
+	serialize :photos, JSON
+
 
 	def self.search(value)
 		where("title LIKE ? or description LIKE ?", "%#{value}%", "%#{value}%")

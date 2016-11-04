@@ -46,24 +46,24 @@
  * by using the padding technique, but you may set them up in any dimensions
  * you like based on your site design.
  */
-.card {
-  position: relative;
-  float: left;
-  padding-bottom: 25%;
-  width: 25%;
-  text-align: center;
-}
+ .card {
+    position: relative;
+    float: left;
+    padding-bottom: 25%;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 2px;
+  }
 
-.card:nth-child(1) {
-  margin-left: -3px;
-  margin-right: 1px;
-}
+  .card:nth-child(4n+1) {
+    margin-left: -3px;
+    margin-right: 1px;
+  }
 
-.card:nth-child(2),
-.card:nth-child(3) {
-  margin-right: 1px;
-}
-
+  .card:nth-child(4n+2),
+  .card:nth-child(4n+3) {
+    margin-right: 1px;
+  }
 /* card fronts and backs */
 .card__front,
 .card__back {
@@ -87,24 +87,39 @@
 }
 
 .card__back {
-  background-color: #09D1BC;
+  background-color: #00000;
   -webkit-transform: rotateY(-180deg);
           transform: rotateY(-180deg);
 }
 
 /* card text */
-.card__text {
-  display: inline-block;
+
+
+.card_title {
+  display: text-center;
   position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  margin: auto;
+  height: 80px;
+  color: black;
+  font-family: 'Avenir Next',Avenir,'Helvetica Neue',Helvetica,'Lantinghei SC','Hiragino Sans GB',sans-serif;
+  line-height: 20px;
+}
+
+
+.card__text {
+  ddisplay:inline-block;
+  vertical-align:text-bottom;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  margin: auto;
-  height: 20px;
   color: #FFFFF2;
   font-family: "Roboto Slab", serif;
-  line-height: 20px;
+  position: absolute;
 }
 
 /* hover effect */
