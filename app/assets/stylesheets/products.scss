@@ -1,6 +1,19 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+#owl-demo .item{
+  margin: 3px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .section {
   margin-bottom: 40px;
 }
@@ -11,7 +24,7 @@
 }
 
 .section__content {
-  padding-left: 3px;
+  padding-left: 0;
 }
 
 /**

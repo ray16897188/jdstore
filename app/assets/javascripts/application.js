@@ -15,8 +15,22 @@
 //= require turbolinks
 //= require bootstrap/alert
 //= require bootstrap/dropdown
+//= require owl.carousel
 //= require_tree .
 
+$(document).ready(function() {
+ 
+  $("#owl-demo").owlCarousel({
+ 
+      autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+      items : 1,
+      itemsDesktop : [1199,3],
+      itemsDesktopSmall : [979,3]
+ 
+  });
+ 
+});
 
 (function(){
   var fusoionad_script = document.createElement('script');
@@ -87,7 +101,6 @@
       cardsTimeout( id, newTime, card );
     }, time );
   }
-
   // random number generator given min and max
   function randomNum( min, max ) {
     return Math.random() * (max - min) + min;
