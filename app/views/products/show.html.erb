@@ -37,7 +37,15 @@
 		</div>
 	</div>
 <hr>
-
 </div>
+
+<% case @product.id %>
+<% when 1 %>
+	<%= render partial: "product_rails_detail" %>	
+<% when 2 %>
+	<%= render partial: "product_growth_hack_detail" %>
+<% when 3 %>
+	<%= render partial: "product_cognitive_learning_detail" %>
+<% end %>
 
 
