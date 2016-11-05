@@ -9,10 +9,10 @@
 		<div class="col-md-4">
 			<br>
 			<% if @product.photos.present? %>
-						 <%= image_tag(@product.photos[0].thumb.url, class:"thumbnail") %>
+						 <%= image_tag(@product.photos[0].medium.url) %>
 
 					<% else %>
-							<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+							<%= image_tag("http://placehold.it/200x200&text=No Pic") %>
 
 					<% end %>
 		</div>
@@ -41,7 +41,7 @@
 								<%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
 
 						<% end %>
-				<br>
+
 				<%= link_to other_product.title, product_path(other_product), class: "pull-right" %>
 				<br><br>
 			</div>
