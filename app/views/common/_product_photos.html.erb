@@ -1,0 +1,50 @@
+
+
+<!-- For general Usage -->
+<% image_url ||= "" %>
+<% size ||= "" %>
+
+
+
+<% if product.image.url.nil? %>
+	<% if size == "medium" %>
+		<% image_url = $DEFAULT_MEDIUM_IMAGE %>
+	<% elsif size == "thumb" %>
+		<% image_url = $DEFAULT_THUMB_IMAGE %>
+	<% else %>
+		<% image_url = $DEFAULT_IMAGE %>
+	<% end %>
+
+<% else %>
+	<% if size == "medium" %>
+		<% image_url = product.photos[0].url(:medium) %>
+	<% elsif size == "thumb" %>
+		<% image_url = product.photos[0].url(:thumb) %>
+	<% else %>
+		<% image_url = product.photos[0].url %>
+	<% end %>
+<% end %>
+
+
+
+
+
+<% path = "" %>
+<% admin ||= false %>
+<% only_image ||= false %>
+
+<% if only_image %>
+	<%= image_tag(image_url, style: "width: 100%") %>
+<% else %>
+	<% if admin %>
+		<% path = admin_product_path(product) %>
+	<% else %>
+		<% path = product_path(product) %>
+	<% end %>
+
+	<% if product.image.present? %>
+		<%= link_to image_tag(image_url, style: "width: 100%"), path %>
+	<% else %>
+		<%= link_to image_tag(image_url, style: "width: 100%"), path %>
+	<% end %>
+<% end %>
