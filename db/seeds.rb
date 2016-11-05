@@ -16,7 +16,11 @@ create_address = DeliveryAddress.create([name: '大花', address: '北京市朝�
 #   Product.create!([title: "Product no.#{i}", description: "這是用種子建立的第 #{i} 個商品", price: rand(50..99)*100, quantity: 10])
 # end
 
-Product.create!([title: "Xdite超级一对一", description: "约Xdite大神对你进行一对一的辅导，可以解答你生命中遇到的任何问题", price: 200000, quantity: 1])
-Product.create!([title: "元元轻松DEBUG",   description: "元元助教为你DEBUG，100%药到病除，给你带来如沐春风的体验", price: 50, quantity: 50])
-Product.create!([title: "EVE总管送温暖", description: "大内总管EVE同学为您解决学习之外的一切问题，包括衣食住行~", price: 50, quantity: 100])
-Product.create!([title: "笑来现场吹牛逼", description: "不能保证的时笑来老师的出现时间，能保证的是当场毁你三观，分分钟教你做人", price: 5000, quantity: 2])
+Product.create!([title: "Ruby on Rails轻松入门", description: "用最短的時間，衝刺出最多的進度，立馬找到理想的工作", price: 5000, quantity: 10])
+Product.create!([title: "Growth Hack这样做",   description: "教你如何为自己的产品实现爆炸式增长", price: 5000, quantity: 50])
+Product.create!([title: "Cognitive Learning", description: "元学习，元认知，关于如何学习学习再学习", price: 1200, quantity: 100])
+Product.create!([title: "BlockChain入门知识", description: "Xdite对区块链也有涉猎，如果你不知道这是什么，不如来听一下", price: 1000, quantity: 20])
+Product.create!([title: "敏捷开发与项目管理", description: "停止项目救火队的生活", price: 1000, quantity: 20])
+Product.create!([title: "与Xdite的下午茶时间", description: "约Xdite与你喝茶，谈天，聊人生", price: 20000, quantity: 5])
+Product.create!([title: "《Growth Hack这样做》", description: "来买Xdite的畅销书吧", price: 2000, quantity: 100])
+Product.create!([title: "Xdite公仔", description: "Xdite的公仔，可以买回来放书桌上... 或者床头", price: 50, quantity: 2000])
