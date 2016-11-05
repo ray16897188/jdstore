@@ -6,11 +6,11 @@
 #  title       :string
 #  description :text
 #  quantity    :integer
-#  integer     :string
 #  price       :float
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image       :string
+#  photos      :string
 #
 
 class Product < ApplicationRecord
