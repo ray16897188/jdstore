@@ -45,7 +45,7 @@
 			<% @other_products.each do |other_product| %>
 			<div class="text-center" style="margin-bottom:10px">
 				<% if other_product.photos.present? %>
-							 <%= image_tag(other_product.photos[0].xsthumb.url, class:"thumbnail",style:"margin:0 auto; margin-bottom:6px;") %>
+							 <%= image_tag(other_product.photos[0].prothumb.url, class:"thumbnail",style:"margin:0 auto; margin-bottom:6px;") %>
 
 						<% else %>
 								<%= image_tag("//placehold.it/170x170&text=No Pic", class: "thumbnail", style:"margin:0 auto; margin-bottom:6px;") %>
