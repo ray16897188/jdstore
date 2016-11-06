@@ -4,7 +4,7 @@
 
 	<% delivery_address = DeliveryAddress.find(order.delivery_address_id ) %>
 
-	<div class="row well">
+	<div class="row well" style="opacity:0.95;">
 
 		<%= link_to "查看详情", order_path(order.token), method: :get, class: "btn btn-default pull-right" %>
 		
