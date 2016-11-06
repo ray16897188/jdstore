@@ -42,12 +42,12 @@
 			<h4 class="text-center">其他推荐</h4>
 
 			<% @other_products.each do |other_product| %>
-			<div class="col-md-12">
+			<div class="text-center" style="margin-bottom:10px">
 				<% if other_product.photos.present? %>
-							 <%= image_tag(other_product.photos[0].xsthumb.url, class:"thumbnail pull-center") %>
+							 <%= image_tag(other_product.photos[0].xsthumb.url, class:"thumbnail",style:"margin:0 auto; margin-bottom:6px;") %>
 
 						<% else %>
-								<%= image_tag("//placehold.it/170x170&text=No Pic", class: "thumbnail pull-center") %>
+								<%= image_tag("//placehold.it/170x170&text=No Pic", class: "thumbnail", style:"margin:0 auto; margin-bottom:6px;") %>
 
 						<% end %>
 
