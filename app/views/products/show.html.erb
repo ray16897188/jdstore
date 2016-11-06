@@ -40,19 +40,19 @@
 		<!-- other recommendation -->
 		<div class="col-md-3">
 			<h4 class="text-center">其他推荐</h4>
-			<br>
+
 			<% @other_products.each do |other_product| %>
 			<div class="col-md-12">
 				<% if other_product.photos.present? %>
-							 <%= image_tag(other_product.photos[0].xsthumb.url, class:"thumbnail") %>
+							 <%= image_tag(other_product.photos[0].xsthumb.url, class:"thumbnail pull-center") %>
 
 						<% else %>
-								<%= image_tag("//placehold.it/150x150&text=No Pic", class: "thumbnail") %>
+								<%= image_tag("//placehold.it/150x150&text=No Pic", class: "thumbnail pull-center") %>
 
 						<% end %>
 
-				<%= link_to other_product.title, product_path(other_product), class: "pull-right" %>
-				<br><br>
+				<%= link_to other_product.title, product_path(other_product), class: "pull-center",style:"margin-left:10px;" %>
+
 			</div>
 			<% end %>
 		</div>
