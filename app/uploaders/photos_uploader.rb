@@ -5,7 +5,7 @@ class PhotosUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-   # storage :file
+   storage :file
   #storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -14,7 +14,7 @@ class PhotosUploader < CarrierWave::Uploader::Base
   #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   # end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [1200, 12]
 
   version :xsthumb do
     process resize_to_fill: [170, 170]
