@@ -21,7 +21,7 @@ class PhotosUploader < CarrierWave::Uploader::Base
   end
 
   version :prothumb do
-    process resize_to_fill: [145, 145]
+    process resize_to_fill: [150, 150]
   end
 
   version :thumb do
