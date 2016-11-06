@@ -12,11 +12,11 @@
 			<% @product.photos.each_with_index do |p, index| %>
 				<% if index == 0 %>
 					<%= image_tag p.medium.url %>
-					<div style="letter-spacing: -4px">
+
 				<% else %>
-				<div class="col-md-6">
-					<%= image_tag prothumb.url %>
-				</div>
+				<div class="col-md-12">
+					<%= image_tag medium.url %>
+				 
 				<% end %>
 			<% end %>
 			</div>
