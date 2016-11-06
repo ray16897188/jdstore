@@ -27,11 +27,14 @@
         <div class="section__content clearfix">
           <div class="row">
           	<div class="col-md-6 promo1">
-
+              <a target="_blank" href= "http://fullstack.xinshengdaxue.com">
           	   <%= image_tag "https://ooo.0o0.ooo/2016/11/06/581f3e6386e2e.jpeg", class:"promo_image"%>
+             </a>
           	    </div>
           	    	<div class="col-md-6 promo2">
-                     <%=  image_tag "https://ooo.0o0.ooo/2016/11/06/581f3e92b5eee.jpeg",class:"promo_image" %>
+                    <%=link_to('/products/6') do %>
+                     <%= image_tag "https://ooo.0o0.ooo/2016/11/06/581f3e92b5eee.jpeg",class:"promo_image" %>
+                    <% end %>
                    </div>
 
         </div><!-- /card -->
