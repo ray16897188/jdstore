@@ -14,7 +14,7 @@ class PhotosUploader < CarrierWave::Uploader::Base
   #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   # end
 
-  process resize_to_fit: [1200, 1200]
+  process resize_to_fit: [800,800]
 
   version :xsthumb do
     process resize_to_fill: [170, 170]
